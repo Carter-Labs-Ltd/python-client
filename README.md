@@ -1,8 +1,8 @@
-# LLM powered voice assistant in Python
+![GitHub Banners (2)](https://github.com/Carter-Labs-Ltd/python-client/assets/16668357/45cbb33a-0149-46f8-98bb-7541ba9a7494)
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/EBfr3vHd8M)
 
-An example project showing how to use PyWebRTCVad and [Carter](https://www.carterlabs.ai) with your voice in Python. This will run on a Raspberry Pi, Macbook, Windows PC and gives you complete voice input and output to your character. It also uses the Carter API to get the agent's voice output (subject to improvement soon!)
+An example project using local voice activity detection and [Carter](https://www.carterlabs.ai) in Python. This will run on a Raspberry Pi, Macbook, Windows PC and gives you complete voice input and output to your character. It also uses the Carter API to get the agent's voice output (subject to improvement soon!)
 
 ## Steve Jobs demo:
 
