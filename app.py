@@ -93,6 +93,8 @@ class CarterClient():
 
         if output is not None:
             self.playAudio(output)
+        else:
+            self.toggleListening()
 
     def playAudio(self, audioURL):
 
@@ -128,15 +130,20 @@ class CarterClient():
                 'playerId': self.user_id
             })
             agent_response = r.json()
-            output = agent_response['output']
             
-        # print what the user said
-        print(colored(agent_response['input'], 'dark_grey'))
+            if 'output' in agent_response:
+                output = agent_response['output']
+                    
+                # print what the user said
+                print(colored(agent_response['input'], 'dark_grey'))
 
-        # print what the agent said
-        print(colored(output['text'], 'magenta'))
-            
-        self.speak(output['text'])
+                # print what the agent said
+                print(colored(output['text'], 'magenta'))
+                    
+                self.speak(output['text'])
+            else:
+                self.toggleListening()
+
         
     def getOpener(self):          
         with yaspin(text="Waking agent...", color="magenta") as spinner:
@@ -147,9 +154,11 @@ class CarterClient():
                 'speak': True
             })
             agent_response = r.json()
-            output = agent_response['output']
 
-            self.name = agent_response['agent']['name']
+            if 'output' in agent_response:
+                output = agent_response['output']
+
+                self.name = agent_response['agent']['name']
             
         print(colored(output['text'], 'magenta'))
             
