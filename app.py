@@ -90,7 +90,9 @@ class CarterClient():
         output = agent_response['file_url']
 
         # play audio
-        self.playAudio(output)
+
+        if output is not None:
+            self.playAudio(output)
 
     def playAudio(self, audioURL):
 
