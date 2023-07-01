@@ -83,7 +83,7 @@ class CarterClient():
         r = requests.post('https://api.carterlabs.ai/speak', json={
             'key': self.key,
             'text': text,
-            'playerId': self.user_id,
+            'user_id': self.user_id,
             'voice_id': 'female'
         })
         agent_response = r.json()
@@ -127,7 +127,7 @@ class CarterClient():
             r = requests.post('https://api.carterlabs.ai/chat', json={
                 'key': self.key,
                 'audio': text,
-                'playerId': self.user_id
+                'user_id': self.user_id
             })
             agent_response = r.json()
             
